@@ -3,6 +3,10 @@ package it.tesio.humus.domain;
 import java.util.Date;
 import java.util.Enumeration;
 
+/**
+ * A Community
+ * @author Giacomo Tesio
+ */
 public interface Community {
 	
 	/**
@@ -61,9 +65,8 @@ public interface Community {
 	 * Propose a solution to the target problem.
 	 * 
 	 * @param solution Solution to be evaluated from the community
-	 * @param targetProblem Problem
 	 */
-	void propose(Solution solution, Problem targetProblem);
+	void propose(Solution solution);
 	
 	/**
 	 * Find a problem by identifier.
@@ -73,9 +76,11 @@ public interface Community {
 	Problem findProblem(ProblemIdentifier problemId);
 	
 	/**
-	 * Search for a problem with a title similar to the provided one.
+	 * Search for problems with a title similar to the provided one.
 	 * @param titlePattern
-	 * @return Enumeration of problems.
+	 * @return Enumeration of problems' identifiers.
 	 */
 	Enumeration<ProblemIdentifier> findProblems(String titlePattern);
+	
+	
 }
